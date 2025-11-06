@@ -14,7 +14,7 @@ export default function AboutScreen() {
                     <Icon name="planet-outline" size={120} color="#6C63FF" />
 
                     <Image
-                        source={require("../../assets/img/logo-orion-branca.png")}
+                        source={require("../../assets/logo-branca-belle.png")}
                         style={styles.logo}
                     />
                 </View>

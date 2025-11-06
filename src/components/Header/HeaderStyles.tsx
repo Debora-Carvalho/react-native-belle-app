@@ -7,17 +7,31 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "#0b0c2a",
+        backgroundColor: "transparent",
     },
     profileImage: {
         width: 40,
         height: 40,
         borderRadius: 20,
         borderWidth: 1,
-        borderColor: "#6C63FF",
+        borderColor: "#FF1F6D",
     },
     logo: {
         width: '25%',
         height: 20,
+    },
+    containerLocation: {
+        alignItems: "center",
+    },
+    locationText: {
+        display: "flex",
+        flexDirection: "row",
+        color: "#FF1F6D",
+        gap: 10,
+    },
+    textState: {
+        fontSize: 18,
+        fontWeight: 600,
+        color: "#FF1F6D",
     },
 });

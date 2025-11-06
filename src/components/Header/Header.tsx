@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StatusBar } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from "@expo/vector-icons";
 import { DrawerActions, useNavigation } from "@react-navigation/native";
 
 import { styles } from "./HeaderStyles";
@@ -11,11 +11,15 @@ export default function Header() {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                <Icon name="menu-outline" size={28} color="#FF1F6D" />
+                <Ionicons name="menu-outline" size={28} color="#FF1F6D" />
             </TouchableOpacity>
 
-            <View>
+            <View style={styles.containerLocation}>
                 <Text>Localização</Text>
+                <View style={styles.locationText}>
+                    <Ionicons name="location-outline" size={20} color="#FF1F6D" />
+                    <Text style={styles.textState}>São Paulo, SP</Text>
+                </View>
             </View>
 
             <Image

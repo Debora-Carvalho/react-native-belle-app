@@ -2,16 +2,16 @@ import React from "react";
 import { View, Text, ImageBackground, Image, TouchableOpacity, StatusBar } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
-//import { RootStackParamList } from "../../navigation/StackRoutes";
+import { RootStackParamList } from "../../navigation/StackRoutes";
 
 import { styles } from "./WelcomeStyles";
 
-import Icon from "react-native-vector-icons/Ionicons";
+import { Ionicons } from "@expo/vector-icons";
 
-//type NavigationProps = NativeStackNavigationProp<RootStackParamList, "Welcome">;
+type NavigationProps = NativeStackNavigationProp<RootStackParamList, "Welcome">;
 
 export default function WelcomeScreen() {
-    //const navigation = useNavigation<NavigationProps>();
+    const navigation = useNavigation<NavigationProps>();
 
     return (
         <ImageBackground
@@ -30,16 +30,16 @@ export default function WelcomeScreen() {
                 <View style={styles.containerButton}>
                     <TouchableOpacity
                         style={[styles.button, styles.loginButton]}
-                        // onPress={() => navigation.navigate("Drawer")}
+                        onPress={() => navigation.navigate("Login")}
                     >
                         <Text style={[styles.buttonText, styles.loginButtonText]}>Faça login</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         style={[styles.button, styles.registerButton]}
-                        // onPress={() => navigation.navigate("Drawer")}
+                        onPress={() => navigation.navigate("Register")}
                     >
-                        <Text style={[styles.buttonText, styles.registerButtonText]}>Cadastrar</Text>
+                        <Text style={[styles.buttonText, styles.registerButtonText]}>Crie uma conta</Text>
                     </TouchableOpacity>
                 </View>
             </View>

@@ -1,9 +1,12 @@
-import WelcomeScreen from './src/screens/Welcome/WelcomeScreen';
-import LoginScreen from './src/screens/Login/LoginScreen';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import StackRoutes from "./src/navigation/StackRoutes";
 
 export default function App() {
     return (
-        <LoginScreen />
+        <NavigationContainer>
+            <StackRoutes />
+        </NavigationContainer>
     );
 };
 

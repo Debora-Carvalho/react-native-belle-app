@@ -7,22 +7,22 @@ import LoginScreen from "../screens/Login/LoginScreen";
 import RegisterScreen from "../screens/Register/RegisterScreen";
 
 export type RootStackParamList = {
-  Welcome: undefined;
-  Drawer: undefined;
-  Login: undefined;
-  Register: undefined;
+    Welcome: undefined;
+    Drawer: undefined;
+    Login: undefined;
+    Register: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function StackRoutes() {
-  return (
-    <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Welcome" component={WelcomeScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Register" component={RegisterScreen} />
-      <Stack.Screen name="Drawer" component={DrawerRoutes} />
-    </Stack.Navigator>
-  );
+    return (
+        <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Welcome" component={WelcomeScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Register" component={RegisterScreen} />
+            <Stack.Screen name="Drawer" component={DrawerRoutes} />
+        </Stack.Navigator>
+    );
 }
 
