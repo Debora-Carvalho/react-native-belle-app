@@ -1,9 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/Home/HomeScreen";
-import CoursesScreen from "../screens/Courses/CoursesScreen";
-import TasksScreen from "../screens/Tasks/TasksScreen";
+import FavoritesScreen from "../screens/Favorites/FavoritesScreen";
+import ShoppingCartScreen from "../screens/ShoppingCart/ShoppingCartScreen";
 import ProfileScreen from "../screens/Profile/ProfileScreen";
+
 import Icon from "react-native-vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
@@ -14,8 +15,8 @@ export default function TabRoutes() {
             screenOptions={({ route }) => ({
                 headerShown: false,
                 tabBarStyle: {
-                    backgroundColor: "#0b0c2a",
-                    borderTopColor: "#1c1d44",
+                    backgroundColor: "#F7EEDD",
+                    borderTopColor: "#FA97B9",
                 },
                 tabBarActiveTintColor: "#6C63FF",
                 tabBarInactiveTintColor: "#9fa0c5",
@@ -23,8 +24,8 @@ export default function TabRoutes() {
                     let iconName = "";
 
                     if (route.name === "Início") iconName = "home-outline";
-                    else if (route.name === "Cursos") iconName = "book-outline";
-                    else if (route.name === "Atividades") iconName = "rocket-outline";
+                    else if (route.name === "Favoritos") iconName = "book-outline";
+                    else if (route.name === "Carrinho") iconName = "cart-outline";
                     else if (route.name === "Perfil") iconName = "person-outline";
 
                     return <Icon name={iconName} size={size} color={color} />;
@@ -32,8 +33,8 @@ export default function TabRoutes() {
             })}
         >
             <Tab.Screen name="Início" component={HomeScreen} />
-            <Tab.Screen name="Cursos" component={CoursesScreen} />
-            <Tab.Screen name="Atividades" component={TasksScreen} />
+            <Tab.Screen name="Favoritos" component={FavoritesScreen} />
+            <Tab.Screen name="Carrinho" component={ShoppingCartScreen} />
             <Tab.Screen name="Perfil" component={ProfileScreen} />
         </Tab.Navigator>
     );

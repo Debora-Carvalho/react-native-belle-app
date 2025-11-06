@@ -1,8 +1,8 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import TabRoutes from "./TabRoutes";
-import CoursesScreen from "../screens/Courses/CoursesScreen";
-import TasksScreen from "../screens/Tasks/TasksScreen";
+import ShoppingCartScreen from "../screens/ShoppingCart/ShoppingCartScreen";
+import FavoritesScreen from "../screens/Favorites/FavoritesScreen";
 import ProfileScreen from "../screens/Profile/ProfileScreen";
 import SettingsScreen from "../screens/Settings/SettingsScreen";
 import AboutScreen from "../screens/About/AboutScreen";
@@ -17,9 +17,9 @@ export default function DrawerRoutes() {
             initialRouteName="Início"
             screenOptions={{
                 headerShown: false,
-                drawerPosition: "right",
+                drawerPosition: "left",
                 drawerStyle: {
-                backgroundColor: "#0b0c2a", 
+                backgroundColor: "#FA97B9", 
                 width: 240,
                 },
                 drawerActiveTintColor: "#6C63FF",
@@ -29,7 +29,7 @@ export default function DrawerRoutes() {
                 },
                 drawerItemStyle: {
                 borderBottomWidth: 1,
-                borderBottomColor: "#1c1d44",
+                borderBottomColor: "#F7EEDD",
                 },
             }}
         >
@@ -54,21 +54,21 @@ export default function DrawerRoutes() {
             />
 
             <Drawer.Screen
-                name="Cursos"
-                component={CoursesScreen}
+                name="Pedidos"
+                component={ShoppingCartScreen}
                 options={{
                     drawerIcon: ({ color, size }) => (
-                        <Icon name="book-outline" size={size} color={color} />
+                        <Icon name="cart-outline" size={size} color={color} />
                     ),
                 }}
             />
 
             <Drawer.Screen
-                name="Atividades"
-                component={TasksScreen}
+                name="Favoritos"
+                component={FavoritesScreen}
                 options={{
                     drawerIcon: ({ color, size }) => (
-                        <Icon name="rocket-outline" size={size} color={color} />
+                        <Icon name="heart-outline" size={size} color={color} />
                     ),
                 }}
             />
@@ -88,7 +88,7 @@ export default function DrawerRoutes() {
                 component={AboutScreen}
                 options={{
                     drawerIcon: ({ color, size }) => (
-                        <Icon name="information-circle-outline" size={size} color={color} />
+                        <Icon name="flower-outline" size={size} color={color} />
                     ),
                 }}
             />

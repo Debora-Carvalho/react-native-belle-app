@@ -8,8 +8,6 @@ import { styles } from './HomeStyles';
 import Icon from "react-native-vector-icons/Ionicons";
 
 import Header from '../../components/Header/Header';
-// import CourseCard from '../../components/CourseCard/CourseCard';
-// import TaskCard from '../../components/TaskCard/TaskCard';
 
 type TabParamList = {
     "Início": undefined;
