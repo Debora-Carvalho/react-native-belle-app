@@ -11,7 +11,15 @@ type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'Login'>;
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
     const navigation = useNavigation<NavigationProps>();
+
+    const handleLogin = () => {
+        if (!email || !senha) {
+            alert("Preencha todos os campos para continuar!");
+        return;
+    }};
 
     return (
         <ImageBackground
@@ -49,22 +57,32 @@ export default function LoginScreen() {
                 <View style={styles.inputContainer}>
                     <Ionicons name="lock-closed-outline" size={20} color="#FA97B9" style={styles.inputIcon} />
                     <TextInput
-                        style={styles.input}
+                        style={[styles.input, { paddingRight: 35 }]} 
                         placeholder="Senha"
                         placeholderTextColor="#A9A9A9"
-                        secureTextEntry
+                        secureTextEntry={!showPassword} 
                         value={senha}
                         onChangeText={setSenha}
                     />
+                    <TouchableOpacity
+                        style={styles.eyeButton}
+                        onPress={() => setShowPassword(!showPassword)}
+                    >
+                        <Ionicons
+                            name={showPassword ? "eye-outline" : "eye-off-outline"}
+                            size={20}
+                            color="#FA97B9"
+                        />
+                    </TouchableOpacity>
                 </View>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={handleLogin}>
                     <Text style={styles.buttonText}>Entrar</Text>
                     <Ionicons name="arrow-forward-outline" size={20} color="#F7EEDD" />
                 </TouchableOpacity>
 
-                {/* link para a página de login */}
-                <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+                {/* link para a página de cadastro */}
+                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Register')}>
                     <Text style={{ marginTop: 10, textAlign: 'center' }}>
                         Ainda não tem uma conta? <Text style={{  color: '#FA97B9', fontWeight: '800' }}>Cadastre-se aqui</Text>
                     </Text>

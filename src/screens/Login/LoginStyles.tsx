@@ -86,4 +86,8 @@ export const styles = StyleSheet.create({
         color: "#F7EEDD",
         marginRight: 10,
     },
+    eyeButton: {
+        position: 'absolute',
+        right: 20,
+    },
 });
