@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "flex-start",
         paddingVertical: 40,
-        paddingHorizontal: 20,
     },
     containerLogo: {
         alignItems: "center",
