@@ -1,8 +1,10 @@
-export type DrawerParamList = {
+export type RootStackParamList = {
   Home: undefined;
-  Cursos: undefined;
-  Atividades: undefined;
-  Perfil: undefined;
-  Configurações: undefined;
-  Sobre: undefined;
+  ProductDetails: {
+    id: number;
+    title: string;
+    image: string;
+    price: number;
+    favorite: boolean;
+  };
 };
