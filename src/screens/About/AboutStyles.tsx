@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     },
     containerLogo: {
         alignItems: "center",
+        justifyContent: "center",
     },
     logo: {
         justifyContent: "center",
@@ -22,14 +23,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#F7EEDD',
         borderRadius: 20,
         padding: 30,
-        marginHorizontal: 10,
         marginBottom: 15,
-        width: 350,
-        shadowColor: "#000",
-        shadowOpacity: 0.1,
-        shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 4,
-        elevation: 3,
+        width: '100%',
     },
     iconTitle: {
         flexDirection: "row",

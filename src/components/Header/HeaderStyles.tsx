@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         backgroundColor: "transparent",
+        paddingHorizontal: 20,
     },
     profileImage: {
         width: 40,

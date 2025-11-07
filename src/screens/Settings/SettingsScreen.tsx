@@ -17,11 +17,11 @@ export default function SettingsScreen() {
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Conta</Text>
                     <TouchableOpacity style={styles.option}>
-                        <Icon name="key-outline" size={22} color="#6C63FF" />
+                        <Icon name="key-outline" size={22} color="#FA97B9" />
                         <Text style={styles.optionText}>Alterar senha</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.option}>
-                        <Icon name="mail-outline" size={22} color="#6C63FF" />
+                        <Icon name="mail-outline" size={22} color="#FA97B9" />
                         <Text style={styles.optionText}>E-mail</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.option}>
@@ -34,11 +34,11 @@ export default function SettingsScreen() {
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Notificações</Text>
                     <TouchableOpacity style={styles.option}>
-                        <Icon name="notifications-outline" size={22} color="#6C63FF" />
+                        <Icon name="notifications-outline" size={22} color="#FA97B9" />
                         <Text style={styles.optionText}>Ativar/Desativar notificações</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.option}>
-                        <Icon name="alarm-outline" size={22} color="#6C63FF" />
+                        <Icon name="alarm-outline" size={22} color="#FA97B9" />
                         <Text style={styles.optionText}>Lembretes de atividades</Text>
                     </TouchableOpacity>
                 </View>
@@ -47,11 +47,11 @@ export default function SettingsScreen() {
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Preferências</Text>
                     <TouchableOpacity style={styles.option}>
-                        <Icon name="color-palette-outline" size={22} color="#6C63FF" />
+                        <Icon name="color-palette-outline" size={22} color="#FA97B9" />
                         <Text style={styles.optionText}>Tema (Claro/Escuro)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.option}>
-                        <Icon name="language-outline" size={22} color="#6C63FF" />
+                        <Icon name="language-outline" size={22} color="#FA97B9" />
                         <Text style={styles.optionText}>Idioma</Text>
                     </TouchableOpacity>
                 </View>
@@ -60,11 +60,11 @@ export default function SettingsScreen() {
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>Sobre o App</Text>
                     <TouchableOpacity style={styles.option}>
-                        <Icon name="document-text-outline" size={22} color="#6C63FF" />
+                        <Icon name="document-text-outline" size={22} color="#FA97B9" />
                         <Text style={styles.optionText}>Termos de uso</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.option}>
-                        <Icon name="shield-checkmark-outline" size={22} color="#6C63FF" />
+                        <Icon name="shield-checkmark-outline" size={22} color="#FA97B9" />
                         <Text style={styles.optionText}>Política de privacidade</Text>
                     </TouchableOpacity>
                 </View>

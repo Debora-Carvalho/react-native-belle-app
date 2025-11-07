@@ -5,10 +5,10 @@ export const products = [
     description:
       "Um arranjo vibrante com flores frescas de estação. Ideal para presentear ou decorar ambientes.",
     genre: "Romance",
-    price: 149.9,
+    price: 196.55,
     favorite: true,
     coverImage:
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=60",
+      "https://images.pexels.com/photos/33215772/pexels-photo-33215772.jpeg",
     items: [
       {
         icon: "🌷",

@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         width: "100%",
         paddingVertical: 4,
+        paddingHorizontal: 20,
     },
     searchBar: {
         flexDirection: "row",
@@ -22,8 +23,8 @@ export const styles = StyleSheet.create({
         marginRight: 8,
     },
     input: {
-        width: "73%",
-        fontSize: 16,
+        width: "70%",
+        fontSize: 13,
         color: "#333",
     },
     filterBtn: {

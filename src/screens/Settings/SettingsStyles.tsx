@@ -6,13 +6,12 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "flex-start",
         paddingVertical: 40,
-        paddingHorizontal: 20,
-        backgroundColor: "#0b0c2a",
+        backgroundColor: "#FFFFFF",
     },
     title: {
         fontSize: 26,
         fontWeight: 'bold',
-        color: '#fff',
+        color: '#FA97B9',
         marginBottom: 20,
         textAlign: 'left',
     },
@@ -22,7 +21,7 @@ export const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#6C63FF',
+        color: '#FA97B9',
         marginBottom: 10,
     },
     option: {
@@ -31,11 +30,11 @@ export const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 15,
         borderRadius: 15,
-        backgroundColor: '#1c1d44',
+        backgroundColor: '#F7EEDD',
         marginBottom: 10,
     },
     optionText: {
-        color: '#fff',
+        color: '#000',
         fontSize: 16,
         marginLeft: 15,
     },

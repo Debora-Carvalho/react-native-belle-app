@@ -6,7 +6,25 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "flex-start",
         paddingVertical: 40,
-        paddingHorizontal: 20,
         backgroundColor: "#FFFFFF",
     },
+    productsContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: 16,
+        marginTop: 20,
+    },
+    containerNoResultsText: {
+        flexDirection: 'row',
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 40,
+        gap: 10,
+    },
+    noResultsText: {
+        fontSize: 16,
+        color: '#777',
+    },
+
 });
