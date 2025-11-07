@@ -12,6 +12,11 @@ export default function FavoritesScreen() {
     const [search, setSearch] = useState("");
     const favoriteProducts = products.filter((item) => item.favorite);
 
+    const filteredProducts = favoriteProducts.filter((item) =>
+        item.title.toLowerCase().includes(search.toLowerCase()) ||
+        item.genre.toLowerCase().includes(search.toLowerCase())
+    );
+
     return (
         <View style={styles.container}>
             <Header />
@@ -19,7 +24,7 @@ export default function FavoritesScreen() {
             <SearchBar value={search} onChangeText={setSearch} />
 
             <FlatList
-                data={favoriteProducts}
+                data={filteredProducts}
                 keyExtractor={(item) => item.id.toString()}
                 numColumns={2}
                 showsVerticalScrollIndicator={false}
