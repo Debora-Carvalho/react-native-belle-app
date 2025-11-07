@@ -5,6 +5,7 @@ import { styles } from './LoginStyles';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../navigation/StackRoutes';
+import { DialogModal } from '../../components/DialogModal/DialogModal';
 
 type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -13,13 +14,35 @@ export default function LoginScreen() {
     const [senha, setSenha] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalTitle, setModalTitle] = useState('');
+    const [modalMessage, setModalMessage] = useState('');
+    const [modalButtonText, setModalButtonText] = useState('');
+    const [onModalButtonPress, setOnModalButtonPress] = useState<() => void>(() => {});
+
     const navigation = useNavigation<NavigationProps>();
 
     const handleLogin = () => {
         if (!email || !senha) {
-            alert("Preencha todos os campos para continuar!");
-        return;
-    }};
+            // modal de erro
+            setModalTitle('Ops!');
+            setModalMessage('Preencha todos os campos para continuar.');
+            setModalButtonText('Ok, entendi!');
+            setOnModalButtonPress(() => () => setModalVisible(false));
+            setModalVisible(true);
+            return;
+        }
+
+        // modal de sucesso
+        setModalTitle('Login realizado!');
+        setModalMessage('Bom te ver de novo por aqui :)');
+        setModalButtonText('Continuar');
+        setOnModalButtonPress(() => () => {
+            setModalVisible(false);
+            navigation.navigate('Drawer');
+        });
+        setModalVisible(true);
+    };
 
     return (
         <ImageBackground
@@ -57,10 +80,10 @@ export default function LoginScreen() {
                 <View style={styles.inputContainer}>
                     <Ionicons name="lock-closed-outline" size={20} color="#FA97B9" style={styles.inputIcon} />
                     <TextInput
-                        style={[styles.input, { paddingRight: 35 }]} 
+                        style={[styles.input, { paddingRight: 35 }]}
                         placeholder="Senha"
                         placeholderTextColor="#A9A9A9"
-                        secureTextEntry={!showPassword} 
+                        secureTextEntry={!showPassword}
                         value={senha}
                         onChangeText={setSenha}
                     />
@@ -84,10 +107,20 @@ export default function LoginScreen() {
                 {/* link para a página de cadastro */}
                 <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Register')}>
                     <Text style={{ marginTop: 10, textAlign: 'center' }}>
-                        Ainda não tem uma conta? <Text style={{  color: '#FA97B9', fontWeight: '800' }}>Cadastre-se aqui</Text>
+                        Ainda não tem uma conta? <Text style={{ color: '#FA97B9', fontWeight: '800' }}>Cadastre-se aqui</Text>
                     </Text>
                 </TouchableOpacity>
             </View>
+
+            {/* modal de feedback */}
+            <DialogModal
+                visible={modalVisible}
+                title={modalTitle}
+                message={modalMessage}
+                contentBtn={modalButtonText}
+                onPressBtn={onModalButtonPress}
+                onClose={() => setModalVisible(false)}
+            />
         </ImageBackground>
     );
 };

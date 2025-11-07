@@ -4,7 +4,6 @@ import HomeScreen from "../screens/Home/HomeScreen";
 import FavoritesScreen from "../screens/Favorites/FavoritesScreen";
 import ShoppingCartScreen from "../screens/ShoppingCart/ShoppingCartScreen";
 import ProfileScreen from "../screens/Profile/ProfileScreen";
-
 import Icon from "react-native-vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
@@ -15,20 +14,34 @@ export default function TabRoutes() {
             screenOptions={({ route }) => ({
                 headerShown: false,
                 tabBarStyle: {
-                    backgroundColor: "#F7EEDD",
+                    backgroundColor: "#FFFFFF",
                     borderTopColor: "#FA97B9",
                 },
-                tabBarActiveTintColor: "#6C63FF",
-                tabBarInactiveTintColor: "#9fa0c5",
-                tabBarIcon: ({ color, size }) => {
+                tabBarActiveTintColor: "#FF1F6D",
+                tabBarInactiveTintColor: "#FA97B9",
+                tabBarLabelStyle: {
+                    fontSize: 12,
+                    paddingBottom: 3,
+                },
+                tabBarIcon: ({ color, size, focused }) => {
                     let iconName = "";
 
-                    if (route.name === "Início") iconName = "home-outline";
-                    else if (route.name === "Favoritos") iconName = "book-outline";
-                    else if (route.name === "Carrinho") iconName = "cart-outline";
-                    else if (route.name === "Perfil") iconName = "person-outline";
+                    if (route.name === "Início")
+                        iconName = focused ? "home" : "home-outline";
+                    else if (route.name === "Favoritos")
+                        iconName = focused ? "heart" : "heart-outline";
+                    else if (route.name === "Carrinho")
+                        iconName = focused ? "cart" : "cart-outline";
+                    else if (route.name === "Perfil")
+                        iconName = focused ? "person" : "person-outline";
 
-                    return <Icon name={iconName} size={size} color={color} />;
+                    return (
+                        <Icon
+                            name={iconName}
+                            size={size}
+                            color={color}
+                        />
+                    );
                 },
             })}
         >

@@ -1,18 +1,24 @@
 import React from 'react';
-import { View, Text, ScrollView, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { ImageBackground, View, Text, ScrollView, Image, TouchableOpacity, Linking } from 'react-native';
+import { Ionicons } from "@expo/vector-icons";
 
 import Header from '../../components/Header/Header';
 import { styles } from './AboutStyles';
 
 export default function AboutScreen() {
+    const handleOpenURL = (url: string) => {
+        Linking.openURL(url);
+    };
+
     return (
-        <View style={styles.container}>
+        <ImageBackground
+            source={require("../../assets/background-about.jpg")}
+            style={styles.container}
+        >
             <Header />
+
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.containerLogo}>
-                    <Icon name="planet-outline" size={120} color="#6C63FF" />
-
                     <Image
                         source={require("../../assets/logo-branca-belle.png")}
                         style={styles.logo}
@@ -20,33 +26,53 @@ export default function AboutScreen() {
                 </View>
 
                 <View style={styles.card}>
-                    <Text style={styles.subtitle}>O que é o Orion?</Text>
+                    <View style={styles.iconTitle}>
+                        <Ionicons name="rose-outline" size={24} color="#FA97B9" />
+                        <Text style={styles.subtitle}>Nossa História</Text>
+                    </View>
                     <Text style={styles.text}>
-                        O Orion é um aplicativo educacional interativo voltado para o aprendizado
-                        da astronomia e exploração espacial. Nosso objetivo é proporcionar
-                        conhecimento de maneira prática, divertida e gamificada, ajudando
-                        os usuários a expandirem seus horizontes.
+                        A Belle Flores nasceu da paixão por transformar sentimentos em presentes. 
+                        Desde o início, acreditamos que cada flor carrega uma mensagem única — 
+                        seja amor, amizade ou gratidão. Começamos com um pequeno ateliê artesanal, 
+                        e hoje somos reconhecidos por criar experiências que encantam corações 
+                        e tornam momentos simples em memórias inesquecíveis.
                     </Text>
                 </View>
 
                 <View style={styles.card}>
-                    <Text style={styles.subtitle}>Funcionalidades</Text>
+                    <View style={styles.iconTitle}>
+                        <Ionicons name="heart-outline" size={24} color="#FA97B9" />
+                        <Text style={styles.subtitle}>Nosso Propósito</Text>
+                    </View>
                     <Text style={styles.text}>
-                        • Cursos completos de astronomia, desde conceitos básicos até conteúdos avançados.{"\n"}
-                        • Atividades e desafios para testar seu conhecimento.{"\n"}
-                        • Sistema de pontuação (XP) e streak de dias de acesso para manter a motivação.{"\n"}
-                        • Perfis personalizados e métricas do progresso do usuário.
+                        Nosso propósito é espalhar beleza, delicadeza e amor por meio de flores e livros. 
+                        Cada produto é pensado com cuidado, combinando estética e sentimento, 
+                        para que você possa presentear alguém — ou a si mesmo — com algo verdadeiramente especial.
                     </Text>
                 </View>
 
                 <View style={styles.card}>
-                    <Text style={styles.subtitle}>Nossa missão</Text>
+                    <View style={styles.iconTitle}>
+                        <Ionicons name="share-social-outline" size={24} color="#FA97B9" />
+                        <Text style={styles.subtitle}>Conecte-se Conosco</Text>
+                    </View>
                     <Text style={styles.text}>
-                        Tornar o aprendizado da astronomia acessível, interativo e inspirador,
-                        incentivando a curiosidade científica e a exploração do universo.
+                        Siga nossas redes sociais e acompanhe as novidades, promoções e lançamentos exclusivos da Belle Flores.
                     </Text>
+
+                    <View style={styles.socialContainer}>
+                        <TouchableOpacity onPress={() => handleOpenURL("https://instagram.com")}>
+                            <Ionicons name="logo-instagram" size={28} color="#FA97B9" />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => handleOpenURL("https://facebook.com")}>
+                            <Ionicons name="logo-facebook" size={28} color="#FA97B9" />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => handleOpenURL("https://wa.me/5599999999999")}>
+                            <Ionicons name="logo-whatsapp" size={28} color="#FA97B9" />
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </ScrollView>
-        </View>
+        </ImageBackground>
     );
 };

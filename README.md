@@ -2,7 +2,7 @@
     <img src="./.github/assets/logo-rosa-belle.png" alt="Logotipo cor-de-rosa da Belle Flores" height="100">
 </div>
 
-**Belle Flores** é um aplicativo para agricultura, desenvolvido em **React Native + Expo**, que demonstra a integração de diferentes tipos de navegação (Stack, Drawer e Tab) e armazenamento de dados localmente através do **Async Storage**.
+**Belle Flores** é um aplicativo para floricultura, desenvolvido em **React Native + Expo**, que demonstra a integração de diferentes tipos de navegação (Stack, Drawer e Tab) e armazenamento de dados localmente através do **Async Storage**.
 A aplicação foi desenvolvida para a disciplina de Programação para Dispositivos Móveis I em novembro de 2025.
 
 <br />
@@ -63,7 +63,6 @@ npm run android
 ![React Navigation Drawer](https://img.shields.io/badge/@react--navigation/drawer-7.7.0-yellowgreen)
 ![React Navigation Native Stack](https://img.shields.io/badge/@react--navigation/native--stack-7.6.0-lightgrey)
 ![AsyncStorage](https://img.shields.io/badge/@react--native--async--storage/async--storage-1.23.1-9cf)
-![React Native Vector Icons](https://img.shields.io/badge/react--native--vector--icons-10.3.0-lightblue)
 
 <br />
 

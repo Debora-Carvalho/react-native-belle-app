@@ -19,11 +19,11 @@ export default function DrawerRoutes() {
                 headerShown: false,
                 drawerPosition: "left",
                 drawerStyle: {
-                backgroundColor: "#FA97B9", 
+                backgroundColor: "#FFFFFF", 
                 width: 240,
                 },
-                drawerActiveTintColor: "#6C63FF",
-                drawerInactiveTintColor: "#9fa0c5",
+                drawerActiveTintColor: "#FF1F6D",
+                drawerInactiveTintColor: "#FA97B9",
                 drawerLabelStyle: {
                 fontSize: 16,
                 },

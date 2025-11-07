@@ -5,9 +5,8 @@ import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
 import { styles } from './HomeStyles';
 
-import Icon from "react-native-vector-icons/Ionicons";
-
 import Header from '../../components/Header/Header';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
 
 type TabParamList = {
     "Início": undefined;
@@ -19,6 +18,8 @@ type TabParamList = {
 type NavigationProps = BottomTabNavigationProp<TabParamList, "Início">;
 
 export default function HomeScreen() {
+    const [search, setSearch] = useState("");
+
     const navigation = useNavigation<NavigationProps>();
 
     return (
@@ -30,7 +31,7 @@ export default function HomeScreen() {
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingBottom: 20 }}
             >
-                <Text>home works</Text>
+                <SearchBar value={search} onChangeText={setSearch} />
             </ScrollView>
         </View>
     );
