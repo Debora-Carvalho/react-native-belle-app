@@ -4,10 +4,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { styles } from './RegisterStyles';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../navigation/StackRoutes';
-import { DialogModal } from '../../components/DialogModal/DialogModal'; // ajuste o caminho
+import { StackParamList } from '../../navigation/StackRoutes';
+import { DialogModal } from '../../components/DialogModal/DialogModal'; 
 
-type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'Register'>;
+type NavigationProps = NativeStackNavigationProp<StackParamList, 'Register'>;
 
 export default function RegisterScreen() {
     const [nome, setNome] = useState('');

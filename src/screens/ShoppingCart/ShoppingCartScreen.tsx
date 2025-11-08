@@ -10,7 +10,7 @@ export default function ShoppingCartScreen() {
         <View style={styles.container}>
             <Header />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Text>ShoppingCart works</Text>
+                <Text>Meu carrinho</Text>
             </ScrollView>
         </View>
     );

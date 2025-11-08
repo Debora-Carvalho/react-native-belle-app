@@ -53,11 +53,8 @@ export default function ProductDetailsScreen() {
     };
 
     return (
-        <View style={styles.container}>
-            {/* Background */}
-            <ImageBackground source={{ uri: image }} style={styles.backgroundImage} />
+        <ImageBackground source={{ uri: image }} style={styles.container}>
 
-            {/* Conteúdo rolável */}
             <ScrollView style={styles.scrollContainer}>
                 <View style={styles.content}>
                     <Text style={styles.genre}>{genre}</Text>
@@ -67,7 +64,7 @@ export default function ProductDetailsScreen() {
                         <Text style={styles.price}>R$ {price.toFixed(2)}</Text>
                         <View style={styles.ratingRow}>
                             <Ionicons name="star" size={20} color="#FFD700" />
-                            <Ionicons name="star" size={20} color="#FFD700" />
+                            <Ionicons name="star" size={20} color="#96958eff" />
                             <Ionicons name="star" size={20} color="#FFD700" />
                             <Ionicons name="star-half" size={20} color="#FFD700" />
                             <Ionicons name="star-outline" size={20} color="#FFD700" />
@@ -116,6 +113,6 @@ export default function ProductDetailsScreen() {
                 <Ionicons name="cart-outline" size={22} color="#FFF" />
                 <Text style={styles.addButtonText}>Adicionar ao Carrinho</Text>
             </TouchableOpacity>
-        </View>
+        </ImageBackground>
     );
 };

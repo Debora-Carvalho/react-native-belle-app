@@ -4,10 +4,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { styles } from './LoginStyles';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../navigation/StackRoutes';
+import { StackParamList } from '../../navigation/StackRoutes';
 import { DialogModal } from '../../components/DialogModal/DialogModal';
 
-type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'Login'>;
+type NavigationProps = NativeStackNavigationProp<StackParamList, 'Login'>;
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
