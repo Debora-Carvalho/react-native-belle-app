@@ -38,28 +38,28 @@ export default function StackRoutes() {
             <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Drawer" component={DrawerRoutes} options={{ headerShown: false }} />
             <Stack.Screen name="Favorites" component={FavoritesScreen} options={{ headerShown: false }} />
-      <Stack.Screen
-        name="ProductDetails"
-        component={ProductDetailsScreen}
-        options={({ route }) => ({
-          title: "Detalhes",
-          headerTitleAlign: "center",
-          headerStyle: { backgroundColor: "#FFF" },
-          headerTintColor: "#FF1F6D",
-          headerTitleStyle: { fontWeight: "600" },
-          headerRight: () => (
-            <TouchableOpacity
-              style={{ marginRight: 16 }}
-            >
-              <Ionicons
-                name={route.params?.favorite ? "heart" : "heart-outline"}
-                size={24}
-                color="#FF1F6D"
-              />
-            </TouchableOpacity>
-          ),
-        })}
-        />
+            <Stack.Screen
+                name="ProductDetails"
+                component={ProductDetailsScreen}
+                options={({ route }) => ({
+                    title: "Detalhes",
+                    headerTitleAlign: "center",
+                    headerStyle: { backgroundColor: "#FFF" },
+                    headerTintColor: "#FF1F6D",
+                    headerTitleStyle: { fontWeight: "600" },
+                    headerRight: () => (
+                        <TouchableOpacity
+                            style={{ marginRight: 16 }}
+                        >
+                            <Ionicons
+                                name={route.params?.favorite ? "heart" : "heart-outline"}
+                                size={24}
+                                color="#FF1F6D"
+                            />
+                        </TouchableOpacity>
+                    ),
+                })}
+            />
         </Stack.Navigator>
     );
 };
