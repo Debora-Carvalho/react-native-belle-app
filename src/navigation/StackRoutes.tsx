@@ -8,6 +8,7 @@ import RegisterScreen from "../screens/Register/RegisterScreen";
 import HomeScreen from "../screens/Home/HomeScreen";
 import FavoritesScreen from "../screens/Favorites/FavoritesScreen";
 import ProductDetailsScreen from "../screens/ProductDetails/ProductDetailsScreen";
+import EditarPerfilScreen from "../screens/EditarPerfil/EditarPerfilScreen";
 
 import DrawerRoutes from "./DrawerRoutes";
 
@@ -25,6 +26,7 @@ export type StackParamList = {
         price: number;
         favorite: boolean;
     };
+    EditarPerfil: undefined;
 };
 
 const Stack = createStackNavigator<StackParamList>();
@@ -58,6 +60,17 @@ export default function StackRoutes() {
                             />
                         </TouchableOpacity>
                     ),
+                })}
+            />
+            <Stack.Screen
+                name="EditarPerfil"
+                component={EditarPerfilScreen}
+                options={({ route }) => ({
+                    title: "Editar perfil",
+                    headerTitleAlign: "center",
+                    headerStyle: { backgroundColor: "#FFF" },
+                    headerTintColor: "#FF1F6D",
+                    headerTitleStyle: { fontWeight: "600" },
                 })}
             />
         </Stack.Navigator>

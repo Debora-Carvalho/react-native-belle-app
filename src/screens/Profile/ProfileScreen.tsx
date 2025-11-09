@@ -1,11 +1,18 @@
 import React from 'react';
 import { TouchableOpacity, View, Text, ScrollView, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { StackParamList } from '../../navigation/StackRoutes';
 import { Ionicons, Feather } from "@expo/vector-icons";
 
 import Header from '../../components/Header/Header';
 import { styles } from './ProfileStyles';
 
+type NavigationProps = NativeStackNavigationProp<StackParamList, 'EditarPerfil'>;
+
 export default function ProfileScreen() {
+    const navigation = useNavigation<NavigationProps>();
+
     return (
         <View style={styles.container}>
             <Header />
@@ -40,7 +47,7 @@ export default function ProfileScreen() {
                     </View>
 
                     <View style={styles.optionsContainer}>
-                        <TouchableOpacity style={styles.optionButton}>
+                        <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('EditarPerfil')}>
                             <View style={styles.optionLeft}>
                                 <View style={styles.icon}>
                                     <Feather name="edit" size={20} color="#FFF" />

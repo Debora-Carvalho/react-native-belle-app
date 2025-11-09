@@ -2,13 +2,13 @@ import React from "react";
 import { View, Text, ImageBackground, Image, TouchableOpacity, StatusBar } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../../navigation/StackRoutes";
+import { StackParamList } from "../../navigation/StackRoutes";
 
 import { styles } from "./WelcomeStyles";
 
 import { Ionicons } from "@expo/vector-icons";
 
-type NavigationProps = NativeStackNavigationProp<RootStackParamList, "Welcome">;
+type NavigationProps = NativeStackNavigationProp<StackParamList, "Welcome">;
 
 export default function WelcomeScreen() {
     const navigation = useNavigation<NavigationProps>();
