@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, View, Text, ScrollView, Image } from 'react-native';
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, Feather } from "@expo/vector-icons";
 
 import Header from '../../components/Header/Header';
 import { styles } from './ProfileStyles';
@@ -10,69 +10,88 @@ export default function ProfileScreen() {
         <View style={styles.container}>
             <Header />
 
-            <View style={styles.containerContent}>
-                <View style={styles.profileContainer}>
-                    <Image
-                        source={require('../../assets/avatar-profile.jpg')}
-                        style={styles.profileImage}
-                    />
-                    <TouchableOpacity style={styles.editButton}>
-                        <Ionicons name="camera" size={18} color="#fff" />
-                    </TouchableOpacity>
+            <ScrollView style={{ width: "100%" }}>
+                <View style={styles.containerContent}>
+                    <View style={styles.profileContainer}>
+                        <Image
+                            source={require('../../assets/avatar-profile.jpg')}
+                            style={styles.profileImage}
+                        />
+                        <TouchableOpacity style={styles.editButton}>
+                            <Ionicons name="camera" size={18} color="#FFF" />
+                        </TouchableOpacity>
+                    </View>
+
+                    <Text style={styles.name}>Fernanda Lima</Text>
+                    <Text style={styles.email}>fernanda.lima@gmail.com</Text>
+
+                    <View style={styles.locationContainer}>
+                        <View style={styles.icon}>
+                            <Ionicons name="location-outline" size={20} color="#FFF" />
+                        </View>
+                        <View>
+                            <Text style={styles.locationLabel}>
+                                Endereço de entrega
+                            </Text>
+                            <Text style={styles.locationText}>
+                                Rua das Flores Brancas, 123, Apto. 43B, Jardim Botânico, São Paulo - SP
+                            </Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.optionsContainer}>
+                        <TouchableOpacity style={styles.optionButton}>
+                            <View style={styles.optionLeft}>
+                                <View style={styles.icon}>
+                                    <Feather name="edit" size={20} color="#FFF" />
+                                </View>
+                                <Text style={styles.optionText}>Editar perfil</Text>
+                            </View>
+                            <Ionicons name="chevron-forward" size={20} color="#555" />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.optionButton}>
+                            <View style={styles.optionLeft}>
+                                <View style={styles.icon}>
+                                    <Ionicons name="time-outline" size={20} color="#FFF" />
+                                </View>
+                                <Text style={styles.optionText}>Histórico de pedidos</Text>
+                            </View>
+                            <Ionicons name="chevron-forward" size={20} color="#555" />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.optionButton}>
+                            <View style={styles.optionLeft}>
+                                <View style={styles.icon}>
+                                    <Ionicons name="shapes-outline" size={20} color="#FFF" />
+                                </View>
+                                <Text style={styles.optionText}>Preferências</Text>
+                            </View>
+                            <Ionicons name="chevron-forward" size={20} color="#555" />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.optionButton}>
+                            <View style={styles.optionLeft}>
+                                <View style={styles.icon}>
+                                    <Ionicons name="notifications-outline" size={20} color="#FFF" />
+                                </View>
+                                <Text style={styles.optionText}>Configurações de notificação</Text>
+                            </View>
+                            <Ionicons name="chevron-forward" size={20} color="#555" />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={[styles.optionButton, styles.logoutButton]}>
+                            <View style={styles.optionLeft}>
+                                <View style={styles.iconLogout}>
+                                    <Ionicons name="log-out-outline" size={20} color="#FFF" />
+                                </View>
+                                <Text style={[styles.optionText, { color: '#FF6B6B' }]}>Logout</Text>
+                            </View>
+                            <Ionicons name="chevron-forward" size={20} color="#FF6B6B" />
+                        </TouchableOpacity>
+                    </View>
                 </View>
-
-                <Text style={styles.name}>Fernanda Lima</Text>
-                <Text style={styles.email}>fernanda.lima@gmail.com</Text>
-
-                <View style={styles.locationContainer}>
-                    <Ionicons name="location-outline" size={18} color="#FA97B9" />
-                    <Text style={styles.locationText}>
-                        Rua das Flores Brancas, 123, Apto. 43B, Jardim Botânico, Rio de Janeiro-RJ
-                    </Text>
-                </View>
-
-                <View style={styles.optionsContainer}>
-                    <TouchableOpacity style={styles.optionButton}>
-                        <View style={styles.optionLeft}>
-                            <Ionicons name="person-outline" size={20} color="#555" />
-                            <Text style={styles.optionText}>Editar perfil</Text>
-                        </View>
-                        <Ionicons name="chevron-forward" size={20} color="#999" />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.optionButton}>
-                        <View style={styles.optionLeft}>
-                            <Ionicons name="time-outline" size={20} color="#555" />
-                            <Text style={styles.optionText}>Histórico de pedidos</Text>
-                        </View>
-                        <Ionicons name="chevron-forward" size={20} color="#999" />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.optionButton}>
-                        <View style={styles.optionLeft}>
-                            <Ionicons name="heart-outline" size={20} color="#555" />
-                            <Text style={styles.optionText}>Preferências</Text>
-                        </View>
-                        <Ionicons name="chevron-forward" size={20} color="#999" />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.optionButton}>
-                        <View style={styles.optionLeft}>
-                            <Ionicons name="notifications-outline" size={20} color="#555" />
-                            <Text style={styles.optionText}>Configurações de notificação</Text>
-                        </View>
-                        <Ionicons name="chevron-forward" size={20} color="#999" />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={[styles.optionButton, styles.logoutButton]}>
-                        <View style={styles.optionLeft}>
-                            <Ionicons name="log-out-outline" size={20} color="#FA97B9" />
-                            <Text style={[styles.optionText, { color: '#FA97B9' }]}>Sair</Text>
-                        </View>
-                        <Ionicons name="chevron-forward" size={20} color="#FA97B9" />
-                    </TouchableOpacity>
-                </View>
-            </View>
+            </ScrollView>
         </View>
     );
 };
