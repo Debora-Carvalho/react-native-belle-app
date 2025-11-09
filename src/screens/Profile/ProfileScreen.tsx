@@ -94,7 +94,6 @@ export default function ProfileScreen() {
                                 </View>
                                 <Text style={[styles.optionText, { color: '#FF6B6B' }]}>Logout</Text>
                             </View>
-                            <Ionicons name="chevron-forward" size={20} color="#FF6B6B" />
                         </TouchableOpacity>
                     </View>
                 </View>
