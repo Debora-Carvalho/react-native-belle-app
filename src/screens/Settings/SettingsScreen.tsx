@@ -10,7 +10,7 @@ export default function SettingsScreen() {
     return (
         <View style={styles.container}>
             <Header />
-            <ScrollView style={{width: "90%"}}>
+            <ScrollView showsVerticalScrollIndicator={false} style={{width: "90%"}}>
                 <Text style={styles.title}>Configurações</Text>
 
                 {/* conta */}

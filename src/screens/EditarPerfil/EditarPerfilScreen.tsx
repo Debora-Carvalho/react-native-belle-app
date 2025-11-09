@@ -66,6 +66,23 @@ export default function EditarPerfilScreen() {
                 />
             </View>
 
+            {/* campo Endereço */}
+            <Text style={styles.label}>
+                Endereço para entrega
+            </Text>
+            <View style={styles.inputContainer}>
+                <Ionicons name="location-outline" size={20} color="#FA97B9" style={styles.inputIcon} />
+                <TextInput
+                    style={styles.input}
+                    placeholder="Seu endereço"
+                    placeholderTextColor="#A9A9A9"
+                    keyboardType="default"
+                    autoCapitalize="none"
+                    value={email}
+                    onChangeText={setEmail}
+                />
+            </View>
+
             {/* campo Senha */}
             <Text style={styles.label}>
                 Senha
@@ -95,7 +112,7 @@ export default function EditarPerfilScreen() {
             {/* botão de cadastro */}
             <TouchableOpacity style={[styles.button, styles.saveButton]} onPress={handleRegister}>
                 <Text style={styles.buttonText}>Salvar alterações</Text>
-                <Ionicons name="checkmark" size={20} color="#F7EEDD" />
+                <Ionicons name="checkmark-sharp" size={20} color="#F7EEDD" />
             </TouchableOpacity>
 
             {/* link para cancelar */}

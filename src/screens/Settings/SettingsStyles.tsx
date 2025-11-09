@@ -12,10 +12,12 @@ export const styles = StyleSheet.create({
         fontSize: 26,
         fontWeight: 'bold',
         color: '#FA97B9',
-        marginBottom: 20,
         textAlign: 'left',
+        paddingHorizontal: 10,
+        marginVertical: 20,
     },
     section: {
+        paddingHorizontal: 10,
         marginBottom: 25,
     },
     sectionTitle: {
