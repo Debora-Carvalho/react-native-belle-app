@@ -29,15 +29,28 @@ export const styles = StyleSheet.create({
     option: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: 12,
-        paddingHorizontal: 15,
-        borderRadius: 15,
-        backgroundColor: '#F7EEDD',
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        borderRadius: 20,
+        backgroundColor: "#ffd1e1ff",
         marginBottom: 10,
+    },
+    optionLogout: {
+        backgroundColor: "#ffbabaff",
     },
     optionText: {
         color: '#000',
         fontSize: 16,
         marginLeft: 15,
+    },
+    icon: {
+        backgroundColor: "#FA97B9",
+        borderRadius: 20,
+        padding: 15,
+    },
+    iconLogout: {
+        backgroundColor: "#FF6B6B",
+        borderRadius: 20,
+        padding: 15,
     },
 });
