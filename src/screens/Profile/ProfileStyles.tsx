@@ -5,11 +5,16 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: '#FFFFFF',
-        paddingTop: 40,
+        paddingVertical: 40,
+    },
+    containerContent: {
+        alignItems: 'center',
+        justifyContent: "center",
+        paddingHorizontal: 30,
     },
     profileContainer: {
         position: 'relative',
-        marginBottom: 15,
+        marginVertical: 15,
     },
     profileImage: {
         width: 120,
@@ -37,9 +42,12 @@ export const styles = StyleSheet.create({
     locationContainer: {
         flexDirection: 'row',
         alignItems: 'flex-start',
-        marginHorizontal: 40,
-        gap: 5,
         marginBottom: 25,
+        padding: 10,
+        borderColor: '#FA97B9',
+        borderWidth: 1,
+        borderRadius: 20, 
+        gap: 5,
     },
     locationText: {
         flex: 1,
@@ -52,6 +60,7 @@ export const styles = StyleSheet.create({
         marginTop: 10,
     },
     optionButton: {
+        width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',

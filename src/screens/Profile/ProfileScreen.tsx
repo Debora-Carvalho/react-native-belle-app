@@ -9,9 +9,8 @@ export default function ProfileScreen() {
     return (
         <View style={styles.container}>
             <Header />
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ alignItems: 'center', width: "100%" }}>
 
-                {/* Foto de perfil com botão de edição */}
+            <View style={styles.containerContent}>
                 <View style={styles.profileContainer}>
                     <Image
                         source={require('../../assets/avatar-profile.jpg')}
@@ -22,11 +21,9 @@ export default function ProfileScreen() {
                     </TouchableOpacity>
                 </View>
 
-                {/* Nome e e-mail */}
                 <Text style={styles.name}>Fernanda Lima</Text>
                 <Text style={styles.email}>fernanda.lima@gmail.com</Text>
 
-                {/* Localização */}
                 <View style={styles.locationContainer}>
                     <Ionicons name="location-outline" size={18} color="#FA97B9" />
                     <Text style={styles.locationText}>
@@ -34,7 +31,6 @@ export default function ProfileScreen() {
                     </Text>
                 </View>
 
-                {/* Opções */}
                 <View style={styles.optionsContainer}>
                     <TouchableOpacity style={styles.optionButton}>
                         <View style={styles.optionLeft}>
@@ -76,8 +72,7 @@ export default function ProfileScreen() {
                         <Ionicons name="chevron-forward" size={20} color="#FA97B9" />
                     </TouchableOpacity>
                 </View>
-
-            </ScrollView>
+            </View>
         </View>
     );
 };
