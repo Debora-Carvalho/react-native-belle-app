@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { TouchableOpacity, View, Text, ScrollView, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackParamList } from '../../navigation/StackRoutes';
 import { Ionicons, Feather } from "@expo/vector-icons";
@@ -15,23 +15,26 @@ export default function ProfileScreen() {
     const navigation = useNavigation<NavigationProps>();
     const [userData, setUserData] = useState<{ nome: string; email: string; endereco: string } | null>(null);
 
-    // carregar dados salvos no AsyncStorage
-    useEffect(() => {
-        const loadUserData = async () => {
-            try {
-                const storedUser = await AsyncStorage.getItem('@user_data');
-                if (storedUser) {
-                    const user = JSON.parse(storedUser);
-                    setUserData(user);
+    // ✅ Atualiza dados sempre que a tela ganha foco
+    useFocusEffect(
+        useCallback(() => {
+            const loadUserData = async () => {
+                try {
+                    const storedUser = await AsyncStorage.getItem('@user_data');
+                    if (storedUser) {
+                        const user = JSON.parse(storedUser);
+                        setUserData(user);
+                    }
+                } catch (error) {
+                    console.error('Erro ao carregar dados do usuário:', error);
                 }
-            } catch (error) {
-                console.error('Erro ao carregar dados do usuário:', error);
-            }
-        };
-        loadUserData();
-    }, []);
+            };
 
-    // logout limpa dados e retorna ao login
+            loadUserData();
+        }, [])
+    );
+
+    // 🔹 Logout: limpa dados e volta para o login
     const handleLogout = async () => {
         await AsyncStorage.removeItem('@user_data');
         navigation.navigate('Login');
@@ -53,11 +56,11 @@ export default function ProfileScreen() {
                         </TouchableOpacity>
                     </View>
 
-                    {/* nome e e-mail do usuário */}
+                    {/* Nome e e-mail do usuário */}
                     <Text style={styles.name}>{userData?.nome || 'Carregando...'}</Text>
                     <Text style={styles.email}>{userData?.email || '---'}</Text>
 
-                    {/* endereço do usuário */}
+                    {/* Endereço do usuário */}
                     <View style={styles.locationContainer}>
                         <View style={styles.icon}>
                             <Ionicons name="location-outline" size={20} color="#FFF" />
@@ -74,7 +77,10 @@ export default function ProfileScreen() {
 
                     {/* Opções do perfil */}
                     <View style={styles.optionsContainer}>
-                        <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('EditProfile')}>
+                        <TouchableOpacity
+                            style={styles.optionButton}
+                            onPress={() => navigation.navigate('EditProfile')}
+                        >
                             <View style={styles.optionLeft}>
                                 <View style={styles.icon}>
                                     <Feather name="edit" size={20} color="#FFF" />
@@ -115,7 +121,10 @@ export default function ProfileScreen() {
                         </TouchableOpacity>
 
                         {/* Logout */}
-                        <TouchableOpacity style={[styles.optionButton, styles.logoutButton]} onPress={handleLogout}>
+                        <TouchableOpacity
+                            style={[styles.optionButton, styles.logoutButton]}
+                            onPress={handleLogout}
+                        >
                             <View style={styles.optionLeft}>
                                 <View style={styles.iconLogout}>
                                     <Ionicons name="log-out-outline" size={20} color="#FFF" />

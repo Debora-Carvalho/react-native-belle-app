@@ -19,6 +19,8 @@ export const styles = StyleSheet.create({
     profileImage: {
         width: 120,
         height: 120,
+        borderColor: '#FF1F6D',
+        borderWidth: 1,
         borderRadius: 60,
     },
     editButton: {
@@ -51,7 +53,7 @@ export const styles = StyleSheet.create({
         borderRadius: 20, 
     },
     locationLabel: {
-        color: '#000',
+        color: '#333',
         fontWeight: 600,
     },
     locationText: {
