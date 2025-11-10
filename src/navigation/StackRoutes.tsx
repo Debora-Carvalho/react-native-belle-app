@@ -8,7 +8,7 @@ import RegisterScreen from "../screens/Register/RegisterScreen";
 import HomeScreen from "../screens/Home/HomeScreen";
 import FavoritesScreen from "../screens/Favorites/FavoritesScreen";
 import ProductDetailsScreen from "../screens/ProductDetails/ProductDetailsScreen";
-import EditarPerfilScreen from "../screens/EditarPerfil/EditarPerfilScreen";
+import EditProfileScreen from "../screens/EditProfile/EditProfileScreen";
 
 import DrawerRoutes from "./DrawerRoutes";
 
@@ -26,7 +26,7 @@ export type StackParamList = {
         price: number;
         favorite: boolean;
     };
-    EditarPerfil: undefined;
+    EditProfile: undefined;
 };
 
 const Stack = createStackNavigator<StackParamList>();
@@ -63,8 +63,8 @@ export default function StackRoutes() {
                 })}
             />
             <Stack.Screen
-                name="EditarPerfil"
-                component={EditarPerfilScreen}
+                name="EditProfile"
+                component={EditProfileScreen}
                 options={({ route }) => ({
                     title: "Editar perfil",
                     headerTitleAlign: "center",

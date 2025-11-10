@@ -9,11 +9,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Header from '../../components/Header/Header';
 import { styles } from './ProfileStyles';
 
-type NavigationProps = NativeStackNavigationProp<StackParamList, 'EditarPerfil'>;
+type NavigationProps = NativeStackNavigationProp<StackParamList, 'EditProfile'>;
 
 export default function ProfileScreen() {
     const navigation = useNavigation<NavigationProps>();
-    const [userData, setUserData] = useState<{ nome: string; email: string } | null>(null);
+    const [userData, setUserData] = useState<{ nome: string; email: string; endereco: string } | null>(null);
 
     // carregar dados salvos no AsyncStorage
     useEffect(() => {
@@ -57,6 +57,7 @@ export default function ProfileScreen() {
                     <Text style={styles.name}>{userData?.nome || 'Carregando...'}</Text>
                     <Text style={styles.email}>{userData?.email || '---'}</Text>
 
+                    {/* endereço do usuário */}
                     <View style={styles.locationContainer}>
                         <View style={styles.icon}>
                             <Ionicons name="location-outline" size={20} color="#FFF" />
@@ -66,14 +67,14 @@ export default function ProfileScreen() {
                                 Endereço de entrega
                             </Text>
                             <Text style={styles.locationText}>
-                                Rua das Flores Brancas, 123, Apto. 43B, Jardim Botânico, São Paulo - SP
+                                {userData?.endereco || 'Endereço ainda não cadastrado'}
                             </Text>
                         </View>
                     </View>
 
                     {/* Opções do perfil */}
                     <View style={styles.optionsContainer}>
-                        <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('EditarPerfil')}>
+                        <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('EditProfile')}>
                             <View style={styles.optionLeft}>
                                 <View style={styles.icon}>
                                     <Feather name="edit" size={20} color="#FFF" />
