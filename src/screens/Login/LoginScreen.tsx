@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ImageBackground, TouchableOpacity, View, Text, TextInput, Image } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from './LoginStyles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackParamList } from '../../navigation/StackRoutes';
@@ -18,13 +19,12 @@ export default function LoginScreen() {
     const [modalTitle, setModalTitle] = useState('');
     const [modalMessage, setModalMessage] = useState('');
     const [modalButtonText, setModalButtonText] = useState('');
-    const [onModalButtonPress, setOnModalButtonPress] = useState<() => void>(() => {});
+    const [onModalButtonPress, setOnModalButtonPress] = useState<() => void>(() => { });
 
     const navigation = useNavigation<NavigationProps>();
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         if (!email || !senha) {
-            // modal de erro
             setModalTitle('Ops!');
             setModalMessage('Preencha todos os campos para continuar.');
             setModalButtonText('Ok, entendi!');
@@ -33,15 +33,49 @@ export default function LoginScreen() {
             return;
         }
 
-        // modal de sucesso
-        setModalTitle('Login realizado!');
-        setModalMessage('Bom te ver de novo por aqui :)');
-        setModalButtonText('Continuar');
-        setOnModalButtonPress(() => () => {
-            setModalVisible(false);
-            navigation.navigate('Drawer');
-        });
-        setModalVisible(true);
+        try {
+            const storedUser = await AsyncStorage.getItem('@user_data');
+
+            if (!storedUser) {
+                setModalTitle('Nenhum cadastro encontrado');
+                setModalMessage('Parece que você ainda não possui uma conta. Faça seu cadastro primeiro!');
+                setModalButtonText('Cadastrar agora');
+                setOnModalButtonPress(() => () => {
+                    setModalVisible(false);
+                    navigation.navigate('Register');
+                });
+                setModalVisible(true);
+                return;
+            }
+
+            const user = JSON.parse(storedUser);
+
+            if (user.email === email && user.senha === senha) {
+                // sucesso no login
+                setModalTitle('Login realizado!');
+                setModalMessage(`Bem-vindo(a) de volta, ${user.nome}!`);
+                setModalButtonText('Continuar');
+                setOnModalButtonPress(() => () => {
+                    setModalVisible(false);
+                    navigation.navigate('Drawer');
+                });
+                setModalVisible(true);
+            } else {
+                // erro de credenciais
+                setModalTitle('Credenciais incorretas');
+                setModalMessage('O e-mail ou a senha não conferem. Tente novamente.');
+                setModalButtonText('Ok, entendi!');
+                setOnModalButtonPress(() => () => setModalVisible(false));
+                setModalVisible(true);
+            }
+        } catch (error) {
+            console.error('Erro ao fazer login:', error);
+            setModalTitle('Erro inesperado');
+            setModalMessage('Ocorreu um erro ao tentar fazer login. Tente novamente mais tarde.');
+            setModalButtonText('Fechar');
+            setOnModalButtonPress(() => () => setModalVisible(false));
+            setModalVisible(true);
+        }
     };
 
     return (

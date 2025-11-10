@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { ImageBackground, TouchableOpacity, View, Text, TextInput, Image } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from './RegisterStyles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackParamList } from '../../navigation/StackRoutes';
-import { DialogModal } from '../../components/DialogModal/DialogModal'; 
+import { DialogModal } from '../../components/DialogModal/DialogModal';
 
 type NavigationProps = NativeStackNavigationProp<StackParamList, 'Register'>;
 
@@ -21,15 +22,27 @@ export default function RegisterScreen() {
 
     const navigation = useNavigation<NavigationProps>();
 
-    const handleRegister = () => {
-        // validação básica
+    const handleRegister = async () => {
         if (!nome || !email || !senha) {
             setShowErrorModal(true);
             return;
         }
 
-        // simulação de cadastro bem-sucedido
-        setShowSuccessModal(true);
+        try {
+            const userData = {
+                nome,
+                email,
+                senha,
+            };
+
+            // salvando no AsyncStorage (convertendo para JSON)
+            await AsyncStorage.setItem('@user_data', JSON.stringify(userData));
+
+            setShowSuccessModal(true);
+        } catch (error) {
+            console.error('Erro ao salvar usuário:', error);
+            setShowErrorModal(true);
+        }
     };
 
     return (
