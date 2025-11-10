@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TouchableOpacity, View, Text, ScrollView, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackParamList } from '../../navigation/StackRoutes';
 import { Ionicons, Feather } from "@expo/vector-icons";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Header from '../../components/Header/Header';
 import { styles } from './ProfileStyles';
@@ -12,6 +13,29 @@ type NavigationProps = NativeStackNavigationProp<StackParamList, 'EditarPerfil'>
 
 export default function ProfileScreen() {
     const navigation = useNavigation<NavigationProps>();
+    const [userData, setUserData] = useState<{ nome: string; email: string } | null>(null);
+
+    // carregar dados salvos no AsyncStorage
+    useEffect(() => {
+        const loadUserData = async () => {
+            try {
+                const storedUser = await AsyncStorage.getItem('@user_data');
+                if (storedUser) {
+                    const user = JSON.parse(storedUser);
+                    setUserData(user);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar dados do usuário:', error);
+            }
+        };
+        loadUserData();
+    }, []);
+
+    // logout limpa dados e retorna ao login
+    const handleLogout = async () => {
+        await AsyncStorage.removeItem('@user_data');
+        navigation.navigate('Login');
+    };
 
     return (
         <View style={styles.container}>
@@ -29,8 +53,9 @@ export default function ProfileScreen() {
                         </TouchableOpacity>
                     </View>
 
-                    <Text style={styles.name}>Fernanda Lima</Text>
-                    <Text style={styles.email}>fernanda.lima@gmail.com</Text>
+                    {/* nome e e-mail do usuário */}
+                    <Text style={styles.name}>{userData?.nome || 'Carregando...'}</Text>
+                    <Text style={styles.email}>{userData?.email || '---'}</Text>
 
                     <View style={styles.locationContainer}>
                         <View style={styles.icon}>
@@ -46,6 +71,7 @@ export default function ProfileScreen() {
                         </View>
                     </View>
 
+                    {/* Opções do perfil */}
                     <View style={styles.optionsContainer}>
                         <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('EditarPerfil')}>
                             <View style={styles.optionLeft}>
@@ -87,7 +113,8 @@ export default function ProfileScreen() {
                             <Ionicons name="chevron-forward" size={20} color="#555" />
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.optionButton, styles.logoutButton]}>
+                        {/* Logout */}
+                        <TouchableOpacity style={[styles.optionButton, styles.logoutButton]} onPress={handleLogout}>
                             <View style={styles.optionLeft}>
                                 <View style={styles.iconLogout}>
                                     <Ionicons name="log-out-outline" size={20} color="#FFF" />
