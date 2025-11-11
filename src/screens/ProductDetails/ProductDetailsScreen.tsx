@@ -23,6 +23,7 @@ type ProductDetailsRouteParams = {
     items?: {
         id: number;
         name: string;
+        author?: string;
         icon: string;
         quantity: number;
         unitPrice: number;
@@ -67,8 +68,9 @@ export default function ProductDetailsScreen() {
 
     return (
         <ImageBackground source={{ uri: image }} style={styles.container}>
-
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+            >
                 <View style={styles.containerPriceGenre}>
                     <View style={styles.tagGenre}>
                         <Ionicons name={iconName} size={30} color="#FFF" />
@@ -94,15 +96,22 @@ export default function ProductDetailsScreen() {
                     <Text style={styles.description}>{description}</Text>
 
                     <Text style={styles.sectionTitle}>Itens do Kit</Text>
+
                     {kitItems.map((item) => (
                         <View key={item.id} style={styles.itemContainer}>
                             <View style={styles.itemInfo}>
                                 <Image source={{ uri: item.icon }} style={styles.itemIcon} />
-                                <View>
-                                    <Text style={styles.itemName}>{item.name}</Text>
+                                <View style={styles.itemTextWrapper}>
+                                    <Text style={styles.itemName} numberOfLines={2} ellipsizeMode="tail">
+                                        {item.name}
+                                    </Text>
+
+                                    {item.author ? (
+                                        <Text style={styles.itemAuthor}>{item.author}</Text>
+                                    ) : null}
+
                                     <Text style={styles.itemPrice}>
-                                        R$ {(item.unitPrice * item.quantity).toFixed(2)} (
-                                        {item.quantity}x R$ {item.unitPrice.toFixed(2)})
+                                        R$ {(item.unitPrice * item.quantity).toFixed(2)} ({item.quantity}x R$ {item.unitPrice.toFixed(2)})
                                     </Text>
                                 </View>
                             </View>
@@ -127,7 +136,7 @@ export default function ProductDetailsScreen() {
                 </View>
             </ScrollView>
 
-            {/* botão inferior */}
+            {/* botão fixo inferior */}
             <TouchableOpacity style={styles.addButton}>
                 <Ionicons name="cart-outline" size={22} color="#FFF" />
                 <Text style={styles.addButtonText}>Adicionar ao Carrinho</Text>

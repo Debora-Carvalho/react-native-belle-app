@@ -12,6 +12,7 @@ export type RootStackParamList = {
     items?: {
       id: number;
       name: string;
+      author: string;
       icon: string;
       quantity: number;
       unitPrice: number;
