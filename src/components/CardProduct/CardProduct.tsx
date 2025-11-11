@@ -12,6 +12,16 @@ type CardProductProps = {
     image: string;
     price: number;
     favorite: boolean;
+    genre: string;
+    description: string;
+    rating: number;
+    items?: {
+        id: number;
+        name: string;
+        icon: string;
+        quantity: number;
+        unitPrice: number;
+    }[];
     onToggleFavorite?: (id: number) => void;
     onAddToCart?: (id: number) => void;
 };
@@ -22,6 +32,10 @@ export default function CardProduct({
     image,
     price,
     favorite,
+    genre,
+    description,
+    rating,
+    items,
     onToggleFavorite,
     onAddToCart,
 }: CardProductProps) {
@@ -41,6 +55,10 @@ export default function CardProduct({
             image,
             price,
             favorite: isFavorite,
+            genre,
+            description,
+            rating,
+            items,
         });
     };
 

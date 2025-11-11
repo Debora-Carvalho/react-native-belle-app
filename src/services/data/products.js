@@ -2,30 +2,33 @@ export const products = [
     {
         id: 1,
         title: "Buquê Primavera",
-        description:
-            "Um arranjo vibrante com flores frescas de estação. Ideal para presentear ou decorar ambientes.",
+        description: "Um arranjo vibrante com flores frescas de estação. Ideal para presentear ou decorar ambientes.",
         genre: "Romance",
         price: 196.55,
+        rating: 4.8,
         favorite: true,
         coverImage:
             "https://images.pexels.com/photos/33215772/pexels-photo-33215772.jpeg",
         items: [
             {
+                id: 1,
                 icon: "🌷",
                 name: "Tulipa",
-                unitValue: 12.5,
+                unitPrice: 12.5,
                 quantity: 4,
             },
             {
+                id: 2,
                 icon: "🌻",
                 name: "Girassol",
-                unitValue: 15.0,
+                unitPrice: 15.0,
                 quantity: 3,
             },
             {
+                id: 3,
                 icon: "🌹",
                 name: "Rosa Vermelha",
-                unitValue: 18.0,
+                unitPrice: 18.0,
                 quantity: 2,
             },
         ],
@@ -33,33 +36,36 @@ export const products = [
     {
         id: 2,
         title: "Coleção Romance Contemporâneo",
-        description:
-            "Um kit de livros selecionados com histórias apaixonantes e inspiradoras.",
+        description: "Um kit de livros selecionados com histórias apaixonantes e inspiradoras.",
         genre: "Romance",
         price: 199.9,
+        rating: 4.9,
         favorite: false,
         coverImage:
             "https://images.pexels.com/photos/5706552/pexels-photo-5706552.jpeg",
         items: [
             {
+                id: 4,
                 icon: "📘",
                 name: "Entre Estações",
                 author: "Clara Menezes",
-                unitValue: 59.9,
+                unitPrice: 59.9,
                 quantity: 1,
             },
             {
+                id: 5,
                 icon: "📙",
                 name: "Corações em Linha",
                 author: "Eduardo Nunes",
-                unitValue: 69.9,
+                unitPrice: 69.9,
                 quantity: 1,
             },
             {
+                id: 6,
                 icon: "📗",
                 name: "Sopro do Tempo",
                 author: "Isabela Torres",
-                unitValue: 69.9,
+                unitPrice: 69.9,
                 quantity: 1,
             },
         ],
@@ -67,24 +73,26 @@ export const products = [
     {
         id: 3,
         title: "Mini Vaso Delicato",
-        description:
-            "Pequeno arranjo de flores secas em vaso artesanal. Perfeito para mesas e estantes.",
+        description: "Pequeno arranjo de flores secas em vaso artesanal. Perfeito para mesas e estantes.",
         genre: "Magia",
         price: 59.9,
+        rating: 4.8,
         favorite: false,
         coverImage:
             "https://images.pexels.com/photos/34555854/pexels-photo-34555854.jpeg",
         items: [
             {
+                id: 7,
                 icon: "🌼",
                 name: "Margarida Seca",
-                unitValue: 9.9,
+                unitPrice: 9.9,
                 quantity: 2,
             },
             {
+                id: 8,
                 icon: "🌾",
                 name: "Lavanda",
-                unitValue: 7.5,
+                unitPrice: 7.5,
                 quantity: 3,
             },
         ],
@@ -92,31 +100,34 @@ export const products = [
     {
         id: 4,
         title: "Edição Especial: Flores da Literatura",
-        description:
-            "Uma combinação única de flores e livros em uma caixa presente especial.",
+        description: "Uma combinação única de flores e livros em uma caixa presente especial.",
         genre: "Drama",
         price: 249.9,
+        rating: 4.1,
         favorite: true,
         coverImage:
             "https://images.pexels.com/photos/2300713/pexels-photo-2300713.jpeg",
         items: [
             {
+                id: 9,
                 icon: "📕",
                 name: "Florescer",
                 author: "Helena Duarte",
-                unitValue: 89.9,
+                unitPrice: 89.9,
                 quantity: 1,
             },
             {
+                id: 10,
                 icon: "🌹",
                 name: "Rosa Branca",
-                unitValue: 15.9,
+                unitPrice: 15.9,
                 quantity: 2,
             },
             {
+                id: 11,
                 icon: "🌸",
                 name: "Orquídea",
-                unitValue: 22.9,
+                unitPrice: 22.9,
                 quantity: 2,
             },
         ],
@@ -124,19 +135,20 @@ export const products = [
     {
         id: 5,
         title: "Sombras e Espinhos",
-        description:
-            "Livro envolvente que mistura suspense e fantasia, com toques sombrios e poéticos.",
+        description: "Livro envolvente que mistura suspense e fantasia, com toques sombrios e poéticos.",
         genre: "Suspense",
         price: 89.9,
+        rating: 3.9,
         favorite: false,
         coverImage:
             "https://images.pexels.com/photos/7367919/pexels-photo-7367919.jpeg",
         items: [
             {
+                id: 12,
                 icon: "📖",
                 name: "Sombras e Espinhos",
                 author: "Rafael Monteiro",
-                unitValue: 89.9,
+                unitPrice: 89.9,
                 quantity: 1,
             },
         ],
@@ -144,31 +156,34 @@ export const products = [
     {
         id: 6,
         title: "Caixa Noturna",
-        description:
-            "Arranjo de flores escuras e misteriosas, acompanhado por um livro de terror clássico.",
+        description: "Arranjo de flores escuras e misteriosas, acompanhado por um livro de terror clássico.",
         genre: "Terror",
         price: 179.9,
+        rating: 3.9,
         favorite: true,
         coverImage:
             "https://images.pexels.com/photos/1390433/pexels-photo-1390433.jpeg",
         items: [
             {
+                id: 13,
                 icon: "📓",
                 name: "O Jardim Sombrio",
                 author: "Lúcia Amaral",
-                unitValue: 79.9,
+                unitPrice: 79.9,
                 quantity: 1,
             },
             {
+                id: 14,
                 icon: "🕯️",
                 name: "Vela Aromática Noturna",
-                unitValue: 19.9,
+                unitPrice: 19.9,
                 quantity: 2,
             },
             {
+                id: 15,
                 icon: "🌹",
                 name: "Rosa Negra",
-                unitValue: 15.9,
+                unitPrice: 15.9,
                 quantity: 3,
             },
         ],

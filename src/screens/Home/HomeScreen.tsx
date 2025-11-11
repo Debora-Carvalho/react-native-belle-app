@@ -49,6 +49,10 @@ export default function HomeScreen() {
                         price={item.price}
                         image={item.coverImage}
                         favorite={item.favorite}
+                        genre={item.genre}
+                        description={item.description}
+                        rating={item.rating}
+                        items={item.items}
                     />
                 )}
                 ListEmptyComponent={

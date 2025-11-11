@@ -16,9 +16,10 @@ type ProductDetailsRouteParams = {
     title: string;
     image: string;
     price: number;
+    rating: number;
     favorite: boolean;
-    genre?: string;
-    description?: string;
+    genre: string;
+    description: string;
     items?: {
         id: number;
         name: string;
@@ -35,12 +36,24 @@ export default function ProductDetailsScreen() {
         title,
         image,
         price,
-        genre = "Categoria não especificada",
-        description = "Sem descrição disponível.",
+        rating,
+        genre,
+        description,
         items = [],
     } = route.params as ProductDetailsRouteParams;
 
     const [kitItems, setKitItems] = useState(items);
+
+    const genreIconMap: Record<string, keyof typeof Ionicons.glyphMap> = {
+        Romance: "heart-outline",
+        Magia: "sparkles-outline",
+        Drama: "book-outline",
+        Terror: "skull-outline",
+        Comédia: "happy-outline",
+        Suspense: "footsteps-outline",
+    };
+
+    const iconName = genre && genreIconMap[genre] ? genreIconMap[genre] : "book-outline";
 
     const handleQuantityChange = (itemId: number, delta: number) => {
         setKitItems((prev) =>
@@ -55,19 +68,25 @@ export default function ProductDetailsScreen() {
     return (
         <ImageBackground source={{ uri: image }} style={styles.container}>
 
-            <ScrollView style={styles.scrollContainer}>
-                <View style={styles.content}>
-                    <Text style={styles.genre}>{genre}</Text>
-                    <Text style={styles.title}>{title}</Text>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.containerPriceGenre}>
+                    <View style={styles.tagGenre}>
+                        <Ionicons name={iconName} size={30} color="#FFF" />
+                        <Text style={styles.genre}>{genre}</Text>
+                    </View>
 
-                    <View style={styles.rowBetween}>
+                    <View style={styles.tagPrice}>
                         <Text style={styles.price}>R$ {price.toFixed(2)}</Text>
+                    </View>
+                </View>
+
+                <View style={styles.content}>
+                    <View style={styles.rowBetween}>
+                        <Text style={styles.title}>{title}</Text>
+
                         <View style={styles.ratingRow}>
-                            <Ionicons name="star" size={20} color="#FFD700" />
-                            <Ionicons name="star" size={20} color="#96958eff" />
-                            <Ionicons name="star" size={20} color="#FFD700" />
-                            <Ionicons name="star-half" size={20} color="#FFD700" />
-                            <Ionicons name="star-outline" size={20} color="#FFD700" />
+                            <Ionicons name="star-outline" size={20} color="#FFF" />
+                            <Text style={styles.rating}>{rating} / 5</Text>
                         </View>
                     </View>
 
@@ -108,7 +127,7 @@ export default function ProductDetailsScreen() {
                 </View>
             </ScrollView>
 
-            {/* Botão inferior */}
+            {/* botão inferior */}
             <TouchableOpacity style={styles.addButton}>
                 <Ionicons name="cart-outline" size={22} color="#FFF" />
                 <Text style={styles.addButtonText}>Adicionar ao Carrinho</Text>

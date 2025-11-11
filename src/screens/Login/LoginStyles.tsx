@@ -14,7 +14,8 @@ export const styles = StyleSheet.create({
         paddingBottom: 80,
         alignItems: 'center',
         justifyContent: "center",
-        borderRadius: 40,
+        borderTopRightRadius: 40,
+        borderTopLeftRadius: 40,
     },
     containerLogo: {
         flex: 1,
