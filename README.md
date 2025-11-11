@@ -15,12 +15,14 @@ A aplicação foi desenvolvida para a disciplina de Programação para Dispositi
     <img src="./.github/assets/screenshot5.png" alt="Screenshot 3 - Tela de cadastro - popup de sucesso" height="400">
     <img src="./.github/assets/screenshot6.png" alt="Screenshot 4 - Tela de login" height="400">
     <img src="./.github/assets/screenshot10.png" alt="Screenshot 5 - Tela de início" height="400">
-    <img src="./.github/assets/screenshot11.png" alt="Screenshot 6 - Tela de início - barra de busca" height="400">
-    <img src="./.github/assets/screenshot15.png" alt="Screenshot 6 - Tela de perfil" height="400">
-    <img src="./.github/assets/screenshot16.png" alt="Screenshot 6 - Tela de edição perfil" height="400">
-    <img src="./.github/assets/screenshot20.png" alt="Screenshot 6 - Tela de configurações" height="400">
-    <img src="./.github/assets/screenshot21.png" alt="Screenshot 6 - Menu lateral" height="400">
-    <img src="./.github/assets/screenshot22.png" alt="Screenshot 6 - Tela de sobre" height="400">
+    <!-- <img src="./.github/assets/screenshot11.png" alt="Screenshot 6 - Tela de início - barra de busca" height="400"> -->
+    <img src="./.github/assets/screenshot23.png" alt="Screenshot 7 - Tela de detalhes do produto" height="400">
+    <img src="./.github/assets/screenshot24.png" alt="Screenshot 8 - Tela de detalhes do produto extendida" height="400">
+    <img src="./.github/assets/screenshot25.png" alt="Screenshot 9 - Tela de perfil" height="400">
+    <img src="./.github/assets/screenshot16.png" alt="Screenshot 10 - Tela de edição perfil" height="400">
+    <img src="./.github/assets/screenshot20.png" alt="Screenshot 11 - Tela de configurações" height="400">
+    <img src="./.github/assets/screenshot21.png" alt="Screenshot 12 - Menu lateral" height="400">
+    <img src="./.github/assets/screenshot22.png" alt="Screenshot 13 - Tela de sobre" height="400">
 </div>
 
 <br />
