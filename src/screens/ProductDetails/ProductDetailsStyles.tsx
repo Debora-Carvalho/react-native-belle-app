@@ -23,11 +23,11 @@ export const styles = StyleSheet.create({
         backgroundColor: "#FFF",
         borderTopRightRadius: 40,
         borderTopLeftRadius: 40,
-        height: height * 0.80,
+        height: height,
         flexGrow: 1,
         paddingHorizontal: 20,
         paddingTop: 20,
-        paddingBottom: 200,
+        paddingBottom: 600,
     },
     genre: {
         fontSize: 16,
@@ -186,5 +186,19 @@ export const styles = StyleSheet.create({
         color: "#FFF",
         fontSize: 16,
         fontWeight: "bold",
+    },
+    pickerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#F8F8F8',
+        borderRadius: 12,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        marginTop: 8,
+        marginBottom: 16,
+    },
+    picker: {
+        flex: 1,
+        color: '#333',
     },
 });

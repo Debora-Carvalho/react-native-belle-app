@@ -7,7 +7,8 @@ import {
     TouchableOpacity,
     Image,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Picker } from "@react-native-picker/picker";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRoute } from "@react-navigation/native";
 import { styles } from "./ProductDetailsStyles";
 
@@ -44,6 +45,7 @@ export default function ProductDetailsScreen() {
     } = route.params as ProductDetailsRouteParams;
 
     const [kitItems, setKitItems] = useState(items);
+    const [selectedChocolate, setSelectedChocolate] = useState<string>("none");
 
     const genreIconMap: Record<string, keyof typeof Ionicons.glyphMap> = {
         Romance: "heart-outline",
@@ -133,10 +135,28 @@ export default function ProductDetailsScreen() {
                             </View>
                         </View>
                     ))}
+
+                    <Text style={styles.sectionTitle}>Adicionar Chocolates</Text>
+
+                    <View style={styles.pickerContainer}>
+                        <MaterialCommunityIcons name="gift-outline" size={24} color="#FF1F6D" style={{ marginRight: 8 }} />
+                        <Picker
+                            selectedValue={selectedChocolate}
+                            style={styles.picker}
+                            onValueChange={(itemValue) => setSelectedChocolate(itemValue)}
+                        >
+                            <Picker.Item label="Não adicionar" value="none" />
+                            <Picker.Item label="🍫 Caixa de chocolate meio amargo (R$ 15,00)" value="meio_amargo" />
+                            <Picker.Item label="🍫 Caixa de chocolate branco (R$ 15,00)" value="branco" />
+                            <Picker.Item label="🍫 Caixa de chocolate ao leite (R$ 15,00)" value="ao_leite" />
+                            <Picker.Item label="🍫 Caixa de chocolate zero lactose (R$ 18,00)" value="zero_lactose" />
+                            <Picker.Item label="🍫 Caixa de bombons sortidos (R$ 20,00)" value="sortidos" />
+                        </Picker>
+                    </View>
                 </View>
             </ScrollView>
 
-            {/* botão fixo inferior */}
+            {/* botão ara adicionar ao carrinho */}
             <TouchableOpacity style={styles.addButton}>
                 <Ionicons name="cart-outline" size={22} color="#FFF" />
                 <Text style={styles.addButtonText}>Adicionar ao Carrinho</Text>
