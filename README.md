@@ -15,9 +15,11 @@ A aplicação foi desenvolvida para a disciplina de Programação para Dispositi
     <img src="./.github/assets/screenshot5.png" alt="Screenshot 3 - Tela de cadastro - popup de sucesso" height="400">
     <img src="./.github/assets/screenshot6.png" alt="Screenshot 4 - Tela de login" height="400">
     <img src="./.github/assets/screenshot10.png" alt="Screenshot 5 - Tela de início" height="400">
-    <!-- <img src="./.github/assets/screenshot11.png" alt="Screenshot 6 - Tela de início - barra de busca" height="400"> -->
+    <img src="./.github/assets/screenshot11.png" alt="Screenshot 6 - Tela de início - barra de busca" height="400">
     <img src="./.github/assets/screenshot23.png" alt="Screenshot 7 - Tela de detalhes do produto" height="400">
     <img src="./.github/assets/screenshot24.png" alt="Screenshot 8 - Tela de detalhes do produto extendida" height="400">
+    <img src="./.github/assets/screenshot28.png" alt="Screenshot 8 - Tela de detalhes do produto com picker" height="400">
+    <img src="./.github/assets/screenshot27.png" alt="Screenshot 8 - Tela de detalhes do produto com picker aberto" height="400">
     <img src="./.github/assets/screenshot25.png" alt="Screenshot 9 - Tela de perfil" height="400">
     <img src="./.github/assets/screenshot16.png" alt="Screenshot 10 - Tela de edição perfil" height="400">
     <img src="./.github/assets/screenshot20.png" alt="Screenshot 11 - Tela de configurações" height="400">
@@ -68,13 +70,14 @@ npm run android
 
 ## Tecnologias utilizadas
 
-![React Native](https://img.shields.io/badge/React_Native-0.81.5-brightgreen)
-![Expo](https://img.shields.io/badge/Expo-54.0.20-orange)
-![React Navigation Native](https://img.shields.io/badge/@react--navigation/native-7.1.19-red)
-![React Navigation Bottom Tabs](https://img.shields.io/badge/@react--navigation/bottom--tabs-7.6.0-blueviolet)
-![React Navigation Drawer](https://img.shields.io/badge/@react--navigation/drawer-7.7.0-yellowgreen)
-![React Navigation Native Stack](https://img.shields.io/badge/@react--navigation/native--stack-7.6.0-lightgrey)
-![AsyncStorage](https://img.shields.io/badge/@react--native--async--storage/async--storage-1.23.1-9cf)
+![React Native](https://img.shields.io/badge/React_Native-0.81.5-FA97B9)
+![Expo](https://img.shields.io/badge/Expo-54.0.20-FA97B9)
+![React Navigation Native](https://img.shields.io/badge/@react--navigation/native-7.1.19-FA97B9)
+![React Navigation Bottom Tabs](https://img.shields.io/badge/@react--navigation/bottom--tabs-7.6.0-FA97B9)
+![React Navigation Drawer](https://img.shields.io/badge/@react--navigation/drawer-7.7.0-FA97B9)
+![React Navigation Native Stack](https://img.shields.io/badge/@react--navigation/native--stack-7.6.0-FA97B9)
+![AsyncStorage](https://img.shields.io/badge/@react--native--async--storage/async--storage-1.23.1-FA97B9)
+![React Native Picker](https://img.shields.io/badge/@react--native--picker/picker-2.11.1-FA97B9)
 
 <br />
 
